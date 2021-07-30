@@ -122,6 +122,69 @@ class ShareToFriend extends Component {
                         </View>
                     </View>
                 </View>
+
+                <View
+                    key={'spinnerLogin'}
+                    style={styles.spinner}
+                >
+                    <View style={styles.spinnerContent}>
+                        <Text style={[styles.spinnerTitle, { fontSize: 20, color: 'black' }]}>
+                            授权登录
+                        </Text>
+                        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                            <TouchableOpacity
+                                style={{ flex: 1 }}
+                                onPress={() => {
+                                    UShare.authLogin(SharePlatform.WECHAT, (result) => {
+                                        // code: 0成功、1失败、2取消
+                                        console.log(result);
+                                        if(result.code === 0) {
+
+                                            //_this._loginThird(result);
+                                        } else {
+                                            console.log('登录授权失败！');
+                                        }
+                                    });
+                                }}
+                            >
+                                <View style={styles.shareContent}>
+                                    <Image
+                                        style={styles.shareIcon}
+                                        source={shareIconWechat}
+                                    />
+                                    <Text style={styles.spinnerTitle}>
+                                        微信
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={{ flex: 1 }}
+                                onPress={() => {
+                                    UShare.authLogin(SharePlatform.QQ, (result) => {
+                                        // code: 0成功、1失败、2取消
+                                        console.log(result);
+                                        if(result.code === 0) {
+
+                                            //_this._loginThird(result);
+                                        } else {
+                                            console.log('登录授权失败！');
+                                        }
+                                    });
+                                }}
+                            >
+                                <View style={styles.shareContent}>
+                                    <Image
+                                        style={styles.shareIcon}
+                                        source={shareIconQQ}
+                                    />
+                                    <Text style={styles.spinnerTitle}>
+                                        QQ
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
             </View>
         );
     }
