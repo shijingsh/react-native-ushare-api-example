@@ -8,6 +8,8 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.mgUmeng.module.UConfigure;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -45,6 +47,20 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+
+
+      // 初始化Umeng分享
+      UConfigure.setLogEnabled(true);
+
+      UConfigure.init(getApplicationContext(), "5fe93e0544bb94418a66cc9f", "umeng", 1, "");
+      // 初始化Umeng分享  延长初始化
+      //UConfigure.preInit(this, "5fe93e0544bb94418a66cc9f", "umeng");
+      //打印日志
+
+      UConfigure.setWeixin("wx37508906e9cb2cda", "e53dcbd6ab70402b757a59d4b7a10c83");
+      UConfigure.setQQZone("1106747599", "ihDC3Ox2y64EWteF");
+      UConfigure.setSinaWeibo("652858587", "fd9b6e1035d2a865e624257cfebce847", "www.baidu.com");
+      UConfigure.setFileProvider("com.xiushangapp.fileprovider");
   }
 
   /**
