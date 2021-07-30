@@ -2,12 +2,12 @@
 import React, {Component} from 'react';
 import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View,} from 'react-native';
 
-import UShare from './share';
-import SharePlatform from './SharePlatform';
+import UShare from './umeng/share/share';
+import SharePlatform from './umeng/share/SharePlatform';
 
-const shareIconWechat = require('../../images/share_icon_wechat.png');
-const shareIconMoments = require('../../images/share_icon_moments.png');
-const shareIconQQ = require('../../images/share_icon_qq.png');
+const shareIconWechat = require('./images/share_icon_wechat.png');
+const shareIconMoments = require('./images/share_icon_moments.png');
+const shareIconQQ = require('./images/share_icon_qq.png');
 
 
 class ShareToFriend extends Component {
@@ -29,11 +29,11 @@ class ShareToFriend extends Component {
 
                 <View style={styles.content_style}>
                     <View style={styles.content_share}>
-                        <Image source={down_qr} style={styles.down_qr}/>
+                        <Image source={{uri:down_qr}} style={styles.down_qr}/>
                         <Text style={{marginTop:8}}>扫描下载秀上App</Text>
                     </View>
                     <View style={styles.content_share}>
-                        <Image source={qrcode} style={styles.qrcode_img}/>
+                        <Image source={{uri:qrcode}} style={styles.qrcode_img}/>
                         <Text style={{marginTop:8}}>扫描关注秀上</Text>
                     </View>
                 </View>

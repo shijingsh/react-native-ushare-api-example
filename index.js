@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import App from './app/umeng/share/ShareToFriend';
+import App from './app/ShareToFriend';
 import {name as appName} from './app.json';
 
 AppRegistry.registerComponent(appName, () => App);
